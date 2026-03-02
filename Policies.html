@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overscroll-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Policies</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+   <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
+  <link rel="apple-touch-icon" href="images/Logo.png">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FEAE02",
+            secondary: "#060F49",
+            accent1: "#000055",
+            accent2: "#F8F9FB"
+          },
+          fontFamily: {
+            heading: ["Poppins", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FEAE02 0%, #FFC933 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .policy-card {
+      transition: all 0.3s ease;
+    }
+
+    .policy-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] summary .chevron {
+      transform: rotate(180deg);
+    }
+
+    .chevron {
+      transition: transform 0.3s ease;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.7;
+      animation: blob 7s infinite;
+    }
+
+    @keyframes blob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    .info-badge {
+      transition: all 0.2s ease;
+    }
+
+    .info-badge:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-secondary font-body">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/95">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary to-yellow-500 rounded-lg flex items-center justify-center">
+          <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+        </div>
+        <span class="font-heading text-xl font-bold bg-gradient-to-r from-secondary to-accent1 bg-clip-text text-transparent">
+          Dowen College
+        </span>
+      </div>
+
+      <a href="index.html" class="flex items-center space-x-2 text-sm font-medium hover:text-primary transition group">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-br from-secondary via-accent1 to-secondary py-24 md:py-32 overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="blob w-72 h-72 bg-primary top-10 -left-20" style="animation-delay: 0s;"></div>
+    <div class="blob w-96 h-96 bg-yellow-300 top-20 -right-32" style="animation-delay: 2s;"></div>
+    <div class="blob w-64 h-64 bg-primary bottom-10 left-1/3" style="animation-delay: 4s;"></div>
+
+    <!-- Pattern overlay -->
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+      <div class="hero-badge inline-block mb-6">
+        <span class="px-5 py-2 bg-primary/20 backdrop-blur-sm text-primary font-semibold rounded-full text-sm border border-primary/30 inline-flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Safe & Supportive Environment</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title font-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        School <span class="gradient-text">Policies</span>
+      </h1>
+
+      <p class="hero-subtitle text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+        Dowen College Lagos is committed to providing a safe, respectful, and supportive environment for all members of our school community.
+      </p>
+    </div>
+  </section>
+
+  <!-- POLICIES OVERVIEW -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Key Principles -->
+      <div class="mb-16">
+        <div class="text-center mb-12">
+          <span class="text-primary font-semibold text-sm uppercase tracking-wider">Our Commitment</span>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 mb-4 text-secondary">
+            Core <span class="gradient-text">Principles</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="principles-card bg-gradient-to-br from-accent2 to-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
+            <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold mb-2">Safety First</h3>
+            <p class="text-secondary/70 text-sm">Protecting the wellbeing of every student and staff member</p>
+          </div>
+
+          <div class="principles-card bg-gradient-to-br from-accent2 to-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
+            <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold mb-2">Zero Tolerance</h3>
+            <p class="text-secondary/70 text-sm">No tolerance for bullying, harassment, or discrimination</p>
+          </div>
+
+          <div class="principles-card bg-gradient-to-br from-accent2 to-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center">
+            <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-lg font-bold mb-2">Clear Procedures</h3>
+            <p class="text-secondary/70 text-sm">Transparent processes for reporting and resolution</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Policy Documents -->
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-secondary">
+            Policy <span class="gradient-text">Documents</span>
+          </h2>
+          <p class="text-secondary/70">
+            Click on any policy below to read the full details
+          </p>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- ANTI-BULLYING POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Anti-Bullying Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Ensuring a safe and supportive learning environment</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-blue-700">Scope:</strong> This policy applies to all staff, students, parents, volunteers and anyone working for the school. Its goal is to ensure a safe, caring environment where bullying is not tolerated and incidents are addressed promptly.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Definition of Bullying
+                </h4>
+                <p class="mb-4 leading-relaxed">
+                  Bullying is the repeated use of strength or power to hurt, threaten or demean someone physically or emotionally. It is intentional, persistent and often covert.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-sm mb-1">Physical</div>
+                      <p class="text-xs text-secondary/70">Hitting, kicking, pushing, taking belongings</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-sm mb-1">Verbal</div>
+                      <p class="text-xs text-secondary/70">Name-calling, mocking, offensive comments</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-sm mb-1">Emotional</div>
+                      <p class="text-xs text-secondary/70">Isolation, spreading rumours</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-sm mb-1">Cyber</div>
+                      <p class="text-xs text-secondary/70">Harmful online messages or images</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                  </svg>
+                  Warning Signs
+                </h4>
+                <div class="space-y-2">
+                  <div class="flex items-start space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Academic decline or poor concentration</span>
+                  </div>
+                  <div class="flex items-start space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Anxiety, illness complaints, reluctance to attend school</span>
+                  </div>
+                  <div class="flex items-start space-x-3 p-3 bg-yellow-50 rounded-lg">
+                    <svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Damaged belongings, missing money, or unexplained injuries</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Support & Response
+                </h4>
+                <p class="mb-4 leading-relaxed">
+                  Students can report concerns to tutors, teachers, counsellors, hostel parents or prefects. All reports are taken seriously, investigated and recorded.
+                </p>
+                <p class="mb-4 leading-relaxed">
+                  Sanctions may include counselling, monitoring, behaviour agreements, suspension or expulsion. Parents are involved where incidents are serious or persistent.
+                </p>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Last Review:</strong> Reviewed every three years. Approved by the Board of Governors and signed by the Principal on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- SEXUAL HARASSMENT POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Sexual Harassment Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Zero tolerance for harassment and inappropriate conduct</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-purple-700">Policy Statement:</strong> Dowen College Lagos strictly opposes all forms of sexual harassment. This policy applies to staff, students, contractors, vendors, volunteers and parents.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Definition
+                </h4>
+                <p class="leading-relaxed">
+                  Sexual harassment includes unwelcome sexual advances, requests for sexual favours or other conduct of a sexual nature that interferes with work, learning or creates a hostile environment.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  Prohibited Conduct
+                </h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="flex items-start space-x-3 bg-red-50 p-4 rounded-lg border border-red-100">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Unwanted touching or physical contact</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-red-50 p-4 rounded-lg border border-red-100">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Sexual comments, propositions or messages</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-red-50 p-4 rounded-lg border border-red-100">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Sexual images, videos or written materials</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-red-50 p-4 rounded-lg border border-red-100">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Pressure for sexual activity or favours</span>
+                  </div>
+                </div>
+                
+                <div class="info-badge bg-red-100 border-l-4 border-red-500 p-4 rounded-r-lg mt-4">
+                  <p class="text-sm font-semibold text-red-800">
+                    Any romantic or sexual relationship between staff and students is strictly forbidden.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                  </svg>
+                  Reporting & Investigation
+                </h4>
+                <p class="leading-relaxed">
+                  Complaints may be made verbally or in writing to senior staff. Investigations are confidential and conducted with legal guidance.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"></path>
+                  </svg>
+                  Disciplinary Action
+                </h4>
+                <p class="leading-relaxed">
+                  Violations may result in reprimand, suspension, termination, expulsion or other corrective measures. Retaliation and false accusations are prohibited.
+                </p>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Last Review:</strong> Reviewed periodically in line with legal requirements. Signed by the Principal/Head of School on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- HEALTH AND FIRST AID POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Health and First Aid Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Comprehensive health management and first aid procedures</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-green-700">Scope:</strong> This policy applies to all students, staff, governors, volunteers, parents/guardians, and anyone working on behalf of the school. It aims to provide effective first aid and health management on and off school premises.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                  </svg>
+                  Parent Responsibilities
+                </h4>
+                <div class="space-y-3">
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Inform the school of any medical conditions</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Submit a recent medical certificate at admission</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Provide needed medication, check expiry dates, and complete drug administration forms</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-4 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Keep children at home when they are unwell</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                  </svg>
+                  Staff Responsibilities
+                </h4>
+                <p class="text-sm leading-relaxed mb-3">
+                  Staff have access to guidelines on recognizing students with specific medical conditions. The school doctor and Director of Finance and Administration share relevant health plans and risk assessments with homeroom tutors. New staff are briefed on chronic illness protocols during induction.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                  </svg>
+                  School Doctor Responsibilities
+                </h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-blue-50 p-3 rounded-lg text-sm">Available to parents for ongoing concerns</div>
+                  <div class="bg-blue-50 p-3 rounded-lg text-sm">Liaise with students, parents, staff, and health professionals</div>
+                  <div class="bg-blue-50 p-3 rounded-lg text-sm">Keep updated records on students with medical needs</div>
+                  <div class="bg-blue-50 p-3 rounded-lg text-sm">Arrange first aid and hospital transport if needed</div>
+                  <div class="bg-blue-50 p-3 rounded-lg text-sm">Inform parents when students are treated</div>
+                  <div class="bg-blue-50 p-3 rounded-lg text-sm">Manage the sick bay with school nurses</div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  School Trips and Visits
+                </h4>
+                <div class="info-badge bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+                  <p class="text-sm leading-relaxed">
+                    Staff obtain medical information for all participants before trips. Prescribed medications must accompany the student, and staff must know the name, dosage, and frequency. The school doctor supports risk assessments and provides medical details for trip leaders.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Last Review:</strong> Policy reviewed one year after development, then every three years. Signed by the Principal/Head of School on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- SAFEGUARDING AND CHILD PROTECTION POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Safeguarding & Child Protection Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Protecting and promoting the welfare of every child</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-blue-700">Policy Scope:</strong> Applies to all staff, management, governors, volunteers, students, and parents/guardians. Aims to protect children receiving the school's services and guide staff/volunteers in safeguarding.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" clip-rule="evenodd"></path>
+                  </svg>
+                  Core Principles
+                </h4>
+                <div class="space-y-2">
+                  <div class="flex items-start space-x-3 p-3 bg-gradient-to-r from-blue-50 to-white rounded-lg border border-blue-100">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">The child's welfare is paramount (Child's Rights Law 2007)</span>
+                  </div>
+                  <div class="flex items-start space-x-3 p-3 bg-gradient-to-r from-blue-50 to-white rounded-lg border border-blue-100">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">All children have equal right to protection regardless of background</span>
+                  </div>
+                  <div class="flex items-start space-x-3 p-3 bg-gradient-to-r from-blue-50 to-white rounded-lg border border-blue-100">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Partnership with children, parents, carers, and agencies is emphasized</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Types of Abuse
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white p-4 rounded-lg border-l-4 border-red-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-red-700">Physical Abuse</h5>
+                    <p class="text-xs text-secondary/80">Acts of violence including hitting, kicking, burning, choking, or use of weapons, even if claimed as discipline.</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-purple-700">Sexual Abuse</h5>
+                    <p class="text-xs text-secondary/80">Contact (touching, fondling, penetrative acts) and non-contact (exposure to pornography, sexual imagery, exhibitionism).</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg border-l-4 border-orange-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-orange-700">Emotional Abuse</h5>
+                    <p class="text-xs text-secondary/80">Isolation, degradation, constant criticism, or exposure to domestic violence.</p>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg border-l-4 border-yellow-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-yellow-700">Neglect</h5>
+                    <p class="text-xs text-secondary/80">Physical (food, clothing, shelter), emotional (love, attention), medical, educational, or neglectful supervision.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                  </svg>
+                  Child Protection Representative
+                </h4>
+                <div class="info-badge bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                  <p class="text-sm leading-relaxed mb-2">
+                    <strong class="text-indigo-700">Ms. Yinka-Babalola</strong> (school counsellor) is the designated Child Protection Representative.
+                  </p>
+                  <p class="text-xs text-secondary/70">
+                    Responsibilities include ensuring policy implementation, acting as first contact for child protection issues, keeping records, alerting authorities, and leading the Child Safety Committee.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                  </svg>
+                  Handling Suspected Abuse
+                </h4>
+                <p class="text-sm leading-relaxed mb-3">
+                  Suspicions of abuse must be reported to senior management, who must report to police or DSVRT (*6820#). Once authorities are notified, they lead the investigation; the school's role is to supply information and support the child.
+                </p>
+                <div class="info-badge bg-red-100 border-l-4 border-red-500 p-4 rounded-r-lg">
+                  <p class="text-sm font-semibold text-red-800">
+                    It is a criminal offence for staff (in a position of trust) to have a sexual relationship with any student under 18, even if above the age of consent.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Legal Framework:</strong> Based on UN Convention on the Rights of the Child (1989), African Charter on the Rights and Welfare of the Child (1999), Child's Rights Act (2003), Lagos State Child's Rights Law (2007), and other national/international instruments.
+                </p>
+                <p class="text-xs text-secondary/70 mt-2">
+                  <strong>Last Review:</strong> Signed by the Principal Mrs. Adebisi Layiwola on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- FEES POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Fees Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Payment procedures, discounts, and withdrawal terms</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-amber-700">Policy Statement:</strong> This policy applies to all parents and aims for a clear, consistent fee payment process.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                  </svg>
+                  Fee Payment Timing
+                </h4>
+                <div class="info-badge bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                  <p class="text-sm font-semibold text-blue-700 mb-2">All fees are due by the first day of each term.</p>
+                  <p class="text-xs text-secondary/80">Payments must go to the designated school account on the invoice.</p>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                    <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Accepted Payment Methods
+                </h4>
+                <div class="grid md:grid-cols-3 gap-3">
+                  <div class="bg-green-50 p-3 rounded-lg text-center text-sm border border-green-200">Bank Transfers</div>
+                  <div class="bg-green-50 p-3 rounded-lg text-center text-sm border border-green-200">Bank Drafts</div>
+                  <div class="bg-green-50 p-3 rounded-lg text-center text-sm border border-green-200">Cheques</div>
+                  <div class="bg-green-50 p-3 rounded-lg text-center text-sm border border-green-200">Debit Cards/POS</div>
+                  <div class="bg-yellow-50 p-3 rounded-lg text-center text-sm border border-yellow-200">Cash (Rare Cases)</div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"></path>
+                  </svg>
+                  Available Discounts
+                </h4>
+                <div class="space-y-3">
+                  <div class="flex items-start space-x-3 bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold text-lg">10%</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-sm">Annual Payment Discount</div>
+                      <p class="text-xs text-secondary/70">10% discount on tuition for one full annual payment</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <span class="text-white font-bold text-lg">10%</span>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-sm">Sibling Discount</div>
+                      <p class="text-xs text-secondary/70">10% discount on tuition for 2nd and subsequent biological children attending simultaneously</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                  Scholarship Program
+                </h4>
+                <div class="info-badge bg-gradient-to-r from-yellow-50 to-amber-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                  <p class="text-sm leading-relaxed mb-2">
+                    <strong class="text-yellow-700">Annual Tuition Scholarships for High Performers:</strong>
+                  </p>
+                  <ul class="text-xs text-secondary/80 space-y-1">
+                    <li>• Minimum 90% per term (Junior or Senior School)</li>
+                    <li>• Must be maintained for three consecutive terms</li>
+                    <li>• Students revert to full fees if condition not met</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                  </svg>
+                  Late Payment and Default
+                </h4>
+                <div class="space-y-3">
+                  <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                    <p class="text-sm text-red-800 font-semibold mb-2">Consequences of Late Payment:</p>
+                    <ul class="text-xs text-secondary/80 space-y-1">
+                      <li>• Students may be asked to stay home if fees unpaid two weeks after resumption</li>
+                      <li>• 10% default charge per month on outstanding amounts</li>
+                      <li>• Legal action may be taken for high debt</li>
+                      <li>• Parents must pay all reasonable recovery costs</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  Withdrawal Policy
+                </h4>
+                <div class="info-badge bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+                  <p class="text-sm leading-relaxed">
+                    <strong class="text-orange-700">Important:</strong> A full term's notice is required before withdrawal. If not given, one term's fees must be paid to obtain clearance and other documents.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Boarders
+                </h4>
+                <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                  <p class="text-sm text-indigo-800">Boarders must show proof of full payment before being allowed into the hostel.</p>
+                </div>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Important Notes:</strong> Fees are non-negotiable and non-refundable. The school may waive part of fees only for prolonged illness or exceptional cases with written notification.
+                </p>
+                <p class="text-xs text-secondary/70 mt-2">
+                  <strong>Last Review:</strong> Approved by the Board of Governors and signed by the Principal on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- HOMEWORK POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Homework Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Guidelines for assignments, study time, and responsibilities</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-indigo-700">Purpose:</strong> Homework extends learning beyond the classroom, helping students develop independent thought, self-discipline, and good study habits.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+                  </svg>
+                  Time Expectations
+                </h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-gradient-to-br from-blue-50 to-white p-5 rounded-xl border-l-4 border-blue-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-blue-700 flex items-center">
+                      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                      </svg>
+                      Junior Secondary
+                    </h5>
+                    <p class="text-xs text-secondary/80 mb-2">1.5 hours daily + 2-3 hours weekends</p>
+                    <p class="text-xs text-secondary/70">Minimum 3 subjects on weekdays</p>
+                  </div>
+                  <div class="bg-gradient-to-br from-purple-50 to-white p-5 rounded-xl border-l-4 border-purple-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-purple-700 flex items-center">
+                      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                      </svg>
+                      Senior Students
+                    </h5>
+                    <p class="text-xs text-secondary/80 mb-2">2-2.5 hours daily + 3-4 hours weekends</p>
+                    <p class="text-xs text-secondary/70">3-4 subjects on weekdays</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                  </svg>
+                  Student Responsibilities
+                </h4>
+                <div class="space-y-2">
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Record assignments daily in homework diary</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Get teachers' and parents' signatures (especially juniors)</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Complete work to a high, legible standard</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Carry homework diary at all times</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                  </svg>
+                  Guiding Principles
+                </h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-green-50 p-3 rounded-lg text-sm border border-green-200">Clear and well-explained tasks</div>
+                  <div class="bg-green-50 p-3 rounded-lg text-sm border border-green-200">Regular small tasks preferred</div>
+                  <div class="bg-green-50 p-3 rounded-lg text-sm border border-green-200">Set after proper teaching</div>
+                  <div class="bg-green-50 p-3 rounded-lg text-sm border border-green-200">Marked promptly with feedback</div>
+                </div>
+              </div>
+
+              <div class="info-badge bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-yellow-700">Important:</strong> Poor work may need to be redone or completed in detention. Forgetting and basic technical excuses are not accepted. Students should print before class and keep backup copies.
+                </p>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Last Review:</strong> Signed by the Principal Mrs. Adebisi Layiwola on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- ADMISSIONS POLICY -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Admissions Policy</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Entry requirements, examination procedures, and scholarships</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-teal-700">School Profile:</strong> Dowen College Lagos is a co-educational Christian-ethos secondary school in Lekki admitting students mainly into Year 7/JSS1.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                  </svg>
+                  Eligibility & Registration
+                </h4>
+                <div class="space-y-3">
+                  <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <p class="text-sm font-semibold text-blue-800 mb-1">Main Entry: Year 7/JSS1</p>
+                    <p class="text-xs text-secondary/80">Candidates must be at least 10 years old in the year of admission</p>
+                  </div>
+                  <p class="text-sm">Admission forms and prospectuses are available at the school and online after payment.</p>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Entrance Examinations
+                </h4>
+                <p class="text-sm mb-4">School advertises annually and sets three entrance exam dates (February, March, April).</p>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-blue-700">Year 7/JSS1 Exams</h5>
+                    <ul class="text-xs text-secondary/80 space-y-1">
+                      <li>• English Language</li>
+                      <li>• Mathematics</li>
+                      <li>• Non-verbal Reasoning</li>
+                    </ul>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg border-l-4 border-purple-500 shadow-sm">
+                    <h5 class="font-semibold text-sm mb-2 text-purple-700">Transfer Students</h5>
+                    <ul class="text-xs text-secondary/80 space-y-1">
+                      <li>• English & Mathematics</li>
+                      <li>• Science (junior classes)</li>
+                      <li>• Three core subjects (senior)</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <p class="text-xs text-secondary/70 mt-3">Results are sent to parents within a week. Successful candidates are invited for interviews.</p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Required Documents
+                </h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Recent medical report</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Two passport photographs</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Photocopy of birth certificate</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border border-gray-100">
+                    <svg class="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-sm">Last term's school report</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                  Scholarship Opportunities
+                </h4>
+                <div class="space-y-3">
+                  <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-4 rounded-xl border-l-4 border-yellow-500">
+                    <h5 class="font-semibold text-sm mb-2 text-yellow-700">Academic Excellence Scholarship</h5>
+                    <p class="text-xs text-secondary/80 mb-2">Tuition-free for students scoring 90%+ in entrance exam</p>
+                    <p class="text-xs text-secondary/70">Renewable if 90%+ average maintained across Christmas, Easter, and Summer terms</p>
+                  </div>
+                  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border-l-4 border-blue-500">
+                    <h5 class="font-semibold text-sm mb-2 text-blue-700">Cathedral Choir Scholarship</h5>
+                    <p class="text-xs text-secondary/80 mb-2">For Christ Church Cathedral (Lagos) Choir members only</p>
+                    <p class="text-xs text-secondary/70">Two full scholarships per year • Must maintain 80%+ throughout</p>
+                  </div>
+                  <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-xl border-l-4 border-purple-500">
+                    <h5 class="font-semibold text-sm mb-2 text-purple-700">Diocesan Scholarships</h5>
+                    <p class="text-xs text-secondary/80 mb-2">For Diocese of Lagos, Lagos Mainland, and Lagos West members</p>
+                    <p class="text-xs text-secondary/70">Two full scholarships per year • Must maintain 90%+ throughout</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  Confirmation of Acceptance
+                </h4>
+                <div class="info-badge bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                  <p class="text-sm leading-relaxed">
+                    Successful Year 7 candidates confirm places by paying a non-refundable deposit (bank draft) before full payment. Transfer students must pay full fees before joining. Deferrals require written request and continued payment of the deposit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Important:</strong> Admissions into Year 12/SS3 are generally not allowed except in special cases approved by the Principal. School may refuse admission even if a child passes, based on the child's best interests.
+                </p>
+                <p class="text-xs text-secondary/70 mt-2">
+                  <strong>Last Review:</strong> Signed by the Principal/Head of School on 30 August 2021.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+          <!-- CODE OF CONDUCT -->
+          <details class="policy-card group bg-gradient-to-br from-accent2 to-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg">
+            <summary class="cursor-pointer list-none flex items-center justify-between p-8 hover:bg-white/50 transition">
+              <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-heading text-xl font-bold text-secondary">Code of Conduct</h3>
+                  <p class="text-sm text-secondary/60 mt-1">Student behavior expectations and uniform requirements</p>
+                </div>
+              </div>
+              <svg class="chevron w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+
+            <div class="px-8 pb-8 space-y-6 text-secondary/90">
+              
+              <div class="info-badge bg-rose-50 border-l-4 border-rose-500 p-4 rounded-r-lg">
+                <p class="text-sm leading-relaxed">
+                  <strong class="text-rose-700">Disciplinary Framework:</strong> The Dowen College Code of Conduct outlines expected standards of behavior, uniform requirements, and consequences for violations.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Core Commandments
+                </h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-green-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold text-xs">1</span>
+                    <span class="text-sm">Be punctual to school (7:30-7:35 AM arrival)</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-red-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-red-100 rounded-full flex items-center justify-center text-red-700 font-bold text-xs">2</span>
+                    <span class="text-sm">No loitering or disturbances</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-blue-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xs">3</span>
+                    <span class="text-sm">Wear correct school uniform</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-purple-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center text-purple-700 font-bold text-xs">4</span>
+                    <span class="text-sm">No stealing</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-orange-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center text-orange-700 font-bold text-xs">5</span>
+                    <span class="text-sm">No bullying or fighting</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-indigo-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-700 font-bold text-xs">6</span>
+                    <span class="text-sm">Respect school property</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-pink-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-pink-100 rounded-full flex items-center justify-center text-pink-700 font-bold text-xs">7</span>
+                    <span class="text-sm">No examination malpractice</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-yellow-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-700 font-bold text-xs">8</span>
+                    <span class="text-sm">No contraband (electronics, phones, toys, pets)</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-teal-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-teal-100 rounded-full flex items-center justify-center text-teal-700 font-bold text-xs">9</span>
+                    <span class="text-sm">No money (voucher system only)</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-cyan-500">
+                    <span class="flex-shrink-0 w-6 h-6 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-700 font-bold text-xs">10</span>
+                    <span class="text-sm">No outside food (except with doctor's note)</span>
+                  </div>
+                  <div class="flex items-start space-x-3 bg-white p-3 rounded-lg border-l-4 border-rose-500 md:col-span-2">
+                    <span class="flex-shrink-0 w-6 h-6 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs">11</span>
+                    <span class="text-sm">No acts of indecency</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                  </svg>
+                  Grooming Standards
+                </h4>
+                
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <div class="bg-pink-50 p-4 rounded-xl border border-pink-200">
+                    <h5 class="font-semibold text-sm mb-3 text-pink-700 flex items-center">
+                      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                      </svg>
+                      Girls
+                    </h5>
+                    <ul class="text-xs text-secondary/80 space-y-1.5">
+                      <li>• No nail polish</li>
+                      <li>• 'Shuku' (middle/back) without front curve</li>
+                      <li>• Corn rows (8+ lines, no zig-zag)</li>
+                      <li>• No attachments or gel</li>
+                      <li>• No dangling earrings</li>
+                      <li>• Skirts must be below the knee</li>
+                    </ul>
+                  </div>
+                  <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                    <h5 class="font-semibold text-sm mb-3 text-blue-700 flex items-center">
+                      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                      </svg>
+                      Boys
+                    </h5>
+                    <ul class="text-xs text-secondary/80 space-y-1.5">
+                      <li>• Low haircuts (max ¼ inch)</li>
+                      <li>• No facial hair grooming</li>
+                      <li>• No weird haircuts</li>
+                      <li>• Black belt must be worn</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-gray-50 to-slate-50 p-4 rounded-xl border border-gray-200">
+                  <h5 class="font-semibold text-sm mb-2 text-gray-700">General Requirements</h5>
+                  <ul class="text-xs text-secondary/80 space-y-1">
+                    <li>• Short, well-trimmed fingernails</li>
+                    <li>• Only plastic or leather-strap wristwatches</li>
+                    <li>• No extra jewelry or makeup</li>
+                    <li>• Black leather lace-up shoes (not patent/suede)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-heading text-lg font-semibold mb-3 flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"></path>
+                  </svg>
+                  Disciplinary Sanctions
+                </h4>
+                <div class="info-badge bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                  <p class="text-sm leading-relaxed mb-2">
+                    <strong class="text-red-700">Consequences for violations may include:</strong>
+                  </p>
+                  <p class="text-xs text-secondary/80">
+                    Working detention • Suspension • Working suspension • Yard work • Expulsion • Or any other punishment deemed fit by the Disciplinary Committee/Management
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-badge bg-gray-50 border border-gray-200 p-4 rounded-lg">
+                <p class="text-xs text-secondary/70">
+                  <strong>Note:</strong> No religious attire is allowed. Hairstyles should not make a fashion statement. The school reserves the right to determine appropriate conduct and appearance.
+                </p>
+              </div>
+
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="relative bg-gradient-to-br from-secondary via-accent1 to-secondary py-20 md:py-28 overflow-hidden">
+    <div class="blob w-72 h-72 bg-primary top-10 -left-20 opacity-30"></div>
+    <div class="blob w-96 h-96 bg-yellow-300 bottom-10 -right-32 opacity-30" style="animation-delay: 2s;"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center z-10">
+      <div class="cta-content">
+        <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+          Questions About Our <span class="text-primary">Policies?</span>
+        </h3>
+        <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          If you have any questions or concerns about our school policies, please don't hesitate to contact our administration office.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="index.html#contact-us" class="inline-flex items-center justify-center bg-primary text-secondary font-semibold px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl transition-all">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            <span>Contact Us</span>
+          </a>
+          
+          <a href="tel:+234" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-full border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            <span>Call Administration</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+ <footer class="bg-secondary text-white py-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-3 mb-4 md:mb-0">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+          </div>
+          <div>
+            <h1 class="font-heading text-lg font-bold">Dowen College Lagos</h1>
+            <p class="text-white/60 text-xs">Shaping Future Leaders Since 1997</p>
+          </div>
+        </div>
+        
+        <div class="flex space-x-6 text-sm items-center">
+          <a href="https://www.instagram.com/dowencollegelagos/" target="_blank" rel="noopener noreferrer"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.88a1.13 1.13 0 110 2.26 1.13 1.13 0 010-2.26z"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+
+          <a href="https://www.youtube.com/@dowencollegelagos2014" target="_blank" rel="noopener noreferrer"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.7 31.7 0 000 12a31.7 31.7 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.7 31.7 0 0024 12a31.7 31.7 0 00-.5-5.8zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+
+          <a href="index.html#contact-us"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            <span>Contact Us</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/40 text-xs">
+        © 2026 Dowen College Lagos. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ANIMATIONS -->
+  <script>
+    // Hero animations
+    anime({
+      targets: '.hero-badge',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-title',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      duration: 1200,
+      delay: 200,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-subtitle',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      delay: 400,
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    // Principles cards animation
+    anime({
+      targets: '.principles-card',
+      scale: [0.9, 1],
+      opacity: [0, 1],
+      delay: anime.stagger(200, { start: 400 }),
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    // Policy cards animation
+    anime({
+      targets: '.policy-card',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(200, { start: 300 }),
+      duration: 900,
+      easing: 'easeOutExpo'
+    });
+
+    // CTA animation
+    anime({
+      targets: '.cta-content',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      delay: 300,
+      easing: 'easeOutExpo'
+    });
+  </script>
+
+</body>
+</html>

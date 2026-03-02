@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overscroll-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enrolment</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
+  <link rel="apple-touch-icon" href="images/Logo.png">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FEAE02",
+            secondary: "#060F49",
+            accent1: "#000055",
+            accent2: "#F8F9FB"
+          },
+          fontFamily: {
+            heading: ["Poppins", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FEAE02 0%, #FFC933 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .step-card {
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 31px;
+      top: 70px;
+      bottom: -50px;
+      width: 2px;
+      background: linear-gradient(180deg, #FEAE02 0%, rgba(254, 174, 2, 0.2) 100%);
+    }
+
+    .checklist-item {
+      transition: all 0.2s ease;
+    }
+
+    .checklist-item:hover {
+      transform: translateX(4px);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.7;
+      animation: blob 7s infinite;
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+
+    @keyframes blob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-secondary font-body">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/95">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary to-yellow-500 rounded-lg flex items-center justify-center">
+          <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+        </div>
+        <span class="font-heading text-xl font-bold bg-gradient-to-r from-secondary to-accent1 bg-clip-text text-transparent">
+          Dowen College
+        </span>
+      </div>
+
+      <a href="index.html" class="flex items-center space-x-2 text-sm font-medium hover:text-primary transition group">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-br from-secondary via-accent1 to-secondary py-24 md:py-32 overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="blob w-72 h-72 bg-primary top-10 left-0 -translate-x-1/2" style="animation-delay: 0s;"></div>
+    <div class="blob w-96 h-96 bg-yellow-300 top-20 right-0 translate-x-1/2" style="animation-delay: 2s;"></div>
+    <div class="blob w-64 h-64 bg-primary bottom-10 left-1/3" style="animation-delay: 4s;"></div>
+
+    <!-- Pattern overlay -->
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+      <div class="hero-badge inline-block mb-6">
+        <span class="px-5 py-2 bg-primary/20 backdrop-blur-sm text-primary font-semibold rounded-full text-sm border border-primary/30 inline-flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+          </svg>
+          <span>Start Your Journey</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title font-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Enrolment<br>
+        <span class="gradient-text">Procedure</span>
+      </h1>
+
+      <p class="hero-subtitle text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+        A clear and structured pathway into Dowen College Lagos, designed to ensure
+        a smooth admission experience for students and parents.
+      </p>
+
+      <!-- Quick Stats -->
+      <div class="hero-stats grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-12">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">4</div>
+          <div class="text-sm text-white/70 mt-1">Simple Steps</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">10+</div>
+          <div class="text-sm text-white/70 mt-1">Min Age</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">Feb-Apr</div>
+          <div class="text-sm text-white/70 mt-1">Exam Period</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ENROLLMENT STEPS -->
+  <section class="py-20 md:py-28 bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="text-center mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">How It Works</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 mb-4">Enrollment Process</h2>
+        <p class="text-secondary/70 max-w-2xl mx-auto">Follow these four simple steps to begin your journey at Dowen College</p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- STEP 1: REGISTRATION -->
+        <div class="step-card relative bg-gradient-to-br from-accent2 to-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-primary to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <span class="text-white font-bold text-2xl">1</span>
+              </div>
+            </div>
+            
+            <div class="flex-1">
+              <h3 class="font-heading text-2xl font-bold mb-3 text-secondary flex items-center">
+                Registration
+                <svg class="w-6 h-6 ml-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                </svg>
+              </h3>
+              
+              <p class="text-secondary/80 leading-relaxed mb-4">
+                Admission forms are obtainable at the school's Admission Office. Entrants must be <strong>ten (10) years old</strong> in the year of admission.
+              </p>
+
+              <div class="bg-yellow-50 border-l-4 border-primary p-4 rounded-r-lg">
+                <p class="text-sm text-secondary/90">
+                  <strong>Note:</strong> Entry into other classes (Year 8 and 9 or Senior Secondary School) is also available.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: REQUIREMENTS -->
+        <div class="step-card relative bg-gradient-to-br from-accent2 to-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent1 rounded-2xl flex items-center justify-center shadow-lg">
+                <span class="text-white font-bold text-2xl">2</span>
+              </div>
+            </div>
+            
+            <div class="flex-1">
+              <h3 class="font-heading text-2xl font-bold mb-3 text-secondary flex items-center">
+                Requirements
+                <svg class="w-6 h-6 ml-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"></path>
+                </svg>
+              </h3>
+              
+              <p class="text-secondary/80 leading-relaxed mb-6">
+                Completed admission forms should be returned to the school with the following documents:
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="checklist-item flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm">
+                  <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm text-secondary/90">Two (2) recent passport-sized photographs</span>
+                </div>
+
+                <div class="checklist-item flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm">
+                  <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm text-secondary/90">One (1) photocopy of birth certificate</span>
+                </div>
+
+                <div class="checklist-item flex items-start space-x-3 bg-white p-4 rounded-lg shadow-sm md:col-span-2">
+                  <div class="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span class="text-sm text-secondary/90">One (1) photocopy of the last term school result of the present school</span>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                <p class="text-sm text-secondary/90 leading-relaxed mb-3">
+                  Candidates cleared by the Admission Office will sit for an entrance examination held at the College and designated centres nationwide. These examinations are conducted <strong>between February and April</strong>.
+                </p>
+                <p class="text-sm text-secondary/90 leading-relaxed">
+                  Transfer candidates are also required to sit for an entrance examination appropriate to their level. Final admission offers are based on examination performance and reports from previous schools.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: CONFIRMATION -->
+        <div class="step-card relative bg-gradient-to-br from-accent2 to-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-primary to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <span class="text-white font-bold text-2xl">3</span>
+              </div>
+            </div>
+            
+            <div class="flex-1">
+              <h3 class="font-heading text-2xl font-bold mb-3 text-secondary flex items-center">
+                Confirmation of Acceptance
+                <svg class="w-6 h-6 ml-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+              </h3>
+              
+              <p class="text-secondary/80 leading-relaxed mb-4">
+                Parents of successful candidates are required to confirm admission by paying non-refundable deposits via bank drafts.
+              </p>
+
+              <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                <p class="text-sm text-secondary/90">
+                  <strong>Deferral Option:</strong> Candidates who wish to defer admission must notify the school in writing and maintain their place by paying the non-refundable deposit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: WITHDRAWAL POLICY -->
+        <div class="step-card relative bg-gradient-to-br from-accent2 to-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent1 rounded-2xl flex items-center justify-center shadow-lg">
+                <span class="text-white font-bold text-2xl">4</span>
+              </div>
+            </div>
+            
+            <div class="flex-1">
+              <h3 class="font-heading text-2xl font-bold mb-3 text-secondary flex items-center">
+                Withdrawal Policy
+                <svg class="w-6 h-6 ml-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                </svg>
+              </h3>
+              
+              <p class="text-secondary/80 leading-relaxed mb-4">
+                A term's notice or payment of one term's fees in lieu of notice is required before a student can be withdrawn. Failure to comply will result in the withholding of transcripts or transfer certificates.
+              </p>
+
+              <div class="space-y-3">
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                  <p class="text-sm text-secondary/90 font-medium mb-2">Important Notice Requirements:</p>
+                  <p class="text-sm text-secondary/90">
+                    Notices of withdrawal submitted at the end of a term for the next term cannot be accepted. For example, withdrawal in the Easter Term requires notice at the beginning of the Christmas Term.
+                  </p>
+                </div>
+
+                <div class="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg">
+                  <p class="text-sm text-secondary/90">
+                    Otherwise, one term's fees in lieu of notice shall be paid.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="documents/Dowen-College-Application-Form.pdf" download
+             class="inline-flex items-center justify-center bg-primary text-secondary font-semibold px-6 py-3 rounded-xl hover:scale-105 hover:shadow-lg transition-all">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 14a2 2 0 002 2h10a2 2 0 002-2v-2a1 1 0 10-2 0v2H5v-2a1 1 0 10-2 0v2zm7-12a1 1 0 011 1v6.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L9 9.586V3a1 1 0 011-1z" clip-rule="evenodd"></path>
+            </svg>
+            Download Application Form
+          </a>
+
+          <a href="documents/Dowen-College-Lagos-Past-Question-Papers.pdf" target="_blank"
+             class="inline-flex items-center justify-center bg-secondary text-white font-semibold px-6 py-3 rounded-xl border border-white/20 hover:bg-accent1 hover:scale-105 hover:shadow-lg transition-all">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M12.586 2H7a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V7.414A2 2 0 0012.586 6L10 3.414A2 2 0 008.586 2H12.586z"></path>
+            </svg>
+            View Past Exam Questions
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="bg-accent2 py-20 md:py-28 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Have Questions?</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 mb-4">Quick Answers</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="faq-item bg-white p-6 rounded-xl shadow-sm border border-gray-100 group">
+          <summary class="font-semibold text-secondary cursor-pointer flex items-center justify-between">
+            <span>What is the minimum age for admission?</span>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </summary>
+          <p class="mt-3 text-secondary/80 text-sm leading-relaxed">
+            Entrants must be ten (10) years old in the year of admission.
+          </p>
+        </details>
+
+        <details class="faq-item bg-white p-6 rounded-xl shadow-sm border border-gray-100 group">
+          <summary class="font-semibold text-secondary cursor-pointer flex items-center justify-between">
+            <span>When are entrance examinations conducted?</span>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </summary>
+          <p class="mt-3 text-secondary/80 text-sm leading-relaxed">
+            Entrance examinations are held between February and April at the College and designated centres nationwide.
+          </p>
+        </details>
+
+        <details class="faq-item bg-white p-6 rounded-xl shadow-sm border border-gray-100 group">
+          <summary class="font-semibold text-secondary cursor-pointer flex items-center justify-between">
+            <span>Can I defer my admission?</span>
+            <svg class="w-5 h-5 text-primary transform group-open:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </summary>
+          <p class="mt-3 text-secondary/80 text-sm leading-relaxed">
+            Yes, candidates who wish to defer admission must notify the school in writing and maintain their place by paying the non-refundable deposit.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="relative bg-gradient-to-br from-secondary via-accent1 to-secondary py-20 md:py-28 overflow-hidden">
+    <!-- Animated background -->
+    <div class="blob w-72 h-72 bg-primary top-10 left-0 -translate-x-1/2 opacity-30"></div>
+    <div class="blob w-96 h-96 bg-yellow-300 bottom-10 right-0 translate-x-1/2 opacity-30" style="animation-delay: 2s;"></div>
+
+    <div class="relative max-w-4xl mx-auto px-6 text-center z-10">
+      <div class="cta-content">
+        <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+          Begin Your Journey at <span class="text-primary">Dowen College</span>
+        </h3>
+        <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+          For further enquiries or to schedule a campus tour, please contact our Admissions Office. We're here to help you every step of the way.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="index.html#contact-us" class="inline-flex items-center justify-center bg-primary text-secondary font-semibold px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl transition-all">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            <span>Contact Admissions</span>
+          </a>
+          
+          <a href="tel:+234-803-345-8997" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-full border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            <span>Call Us</span>
+          </a>
+        </div>
+
+        <!-- Contact info -->
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-white/70 text-sm">
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Lagos, Nigeria</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+            <span>admissions@dowencollege.edu.ng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-secondary text-white py-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-3 mb-4 md:mb-0">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+          </div>
+          <div>
+            <h1 class="font-heading text-lg font-bold">Dowen College Lagos</h1>
+            <p class="text-white/60 text-xs">Shaping Future Leaders Since 1997</p>
+          </div>
+        </div>
+        
+        <div class="flex space-x-6 text-sm items-center">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/dowencollegelagos/"
+             target="_blank"
+             rel="noopener"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5a4.25 4.25 0 00-4.25-4.25h-8.5z"/>
+              <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@dowencollegelagos2014"
+             target="_blank"
+             rel="noopener"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a2.99 2.99 0 00-2.106-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.392.566a2.99 2.99 0 00-2.106 2.12A31.2 31.2 0 000 12a31.2 31.2 0 00.502 5.814 2.99 2.99 0 002.106 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.392-.566a2.99 2.99 0 002.106-2.12A31.2 31.2 0 0024 12a31.2 31.2 0 00-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+
+          <!-- Contact -->
+          <a href="index.html#contact-us"
+             class="hover:text-primary transition">
+            Contact Us
+          </a>
+
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/40 text-xs">
+        © 2026 Dowen College Lagos. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ANIME.JS ANIMATIONS -->
+  <script>
+    // Hero animations
+    anime({
+      targets: '.hero-badge',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-title',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      duration: 1200,
+      delay: 200,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-subtitle',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      delay: 400,
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-stats > div',
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      delay: anime.stagger(150, { start: 600 }),
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    // Step cards animation
+    anime({
+      targets: '.step-card',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(200, { start: 300 }),
+      duration: 900,
+      easing: 'easeOutExpo'
+    });
+
+    // FAQ items animation
+    anime({
+      targets: '.faq-item',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(100, { start: 200 }),
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    // CTA animation
+    anime({
+      targets: '.cta-content',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      delay: 300,
+      easing: 'easeOutExpo'
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overscroll-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
+  <link rel="apple-touch-icon" href="images/Logo.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FEAE02",
+            secondary: "#060F49",
+            accent1: "#000055",
+            accent2: "#F8F9FB"
+          },
+          fontFamily: {
+            heading: ["Poppins", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FEAE02 0%, #FFC933 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .team-card {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FEAE02, #FFC933);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-card:hover .team-image {
+      transform: scale(1.05);
+    }
+
+    .team-image {
+      transition: transform 0.3s ease;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.7;
+      animation: blob 7s infinite;
+    }
+
+    @keyframes blob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-secondary font-body">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/95">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary to-yellow-500 rounded-lg flex items-center justify-center">
+          <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+        </div>
+        <span class="font-heading text-xl font-bold bg-gradient-to-r from-secondary to-accent1 bg-clip-text text-transparent">
+          Dowen College
+        </span>
+      </div>
+
+      <a href="index.html" class="flex items-center space-x-2 text-sm font-medium hover:text-primary transition group">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-br from-secondary via-accent1 to-secondary py-24 md:py-32 overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="blob w-72 h-72 bg-primary top-10 -left-20" style="animation-delay: 0s;"></div>
+    <div class="blob w-96 h-96 bg-yellow-300 top-20 -right-32" style="animation-delay: 2s;"></div>
+    <div class="blob w-64 h-64 bg-primary bottom-10 left-1/3" style="animation-delay: 4s;"></div>
+
+    <!-- Pattern overlay -->
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+      <div class="hero-badge inline-block mb-6">
+        <span class="px-5 py-2 bg-primary/20 backdrop-blur-sm text-primary font-semibold rounded-full text-sm border border-primary/30 inline-flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Leadership Excellence</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title font-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Meet the <span class="gradient-text">Team</span>
+      </h1>
+
+      <p class="hero-subtitle text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+        Dedicated leadership committed to academic excellence and the holistic development of every Dowen College student.
+      </p>
+
+      <!-- Quick Stats -->
+      <div class="hero-stats grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-12">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">20+</div>
+          <div class="text-sm text-white/70 mt-1">Years Experience</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">50+</div>
+          <div class="text-sm text-white/70 mt-1">Faculty Members</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary">5</div>
+          <div class="text-sm text-white/70 mt-1">Key Leaders</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-16">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">Our Leadership</span>
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mt-3 mb-4 text-secondary">
+          Executive <span class="gradient-text">Team</span>
+        </h2>
+        <p class="text-secondary/70 max-w-2xl mx-auto">
+          Experienced professionals dedicated to shaping the future of education
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- PRINCIPAL -->
+        <div class="team-card bg-gradient-to-br from-accent2 to-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="relative h-64 bg-gradient-to-br from-secondary to-accent1 overflow-hidden">
+            <img src="" 
+                 alt="Dr. A. Layiwola" 
+                 class="team-image w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full text-xs font-semibold text-secondary">
+                Principal
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading text-xl font-bold mb-2">Dr. A. Layiwola</h3>
+            <p class="text-xs text-secondary/60 mb-3">
+              Ph.D. B.Sc (Ed) Bio, M.Ed (Educational Administration)
+            </p>
+            <p class="text-sm font-semibold text-primary mb-3">
+              Principal / Head of School
+            </p>
+            <div class="flex items-center space-x-2 text-xs text-secondary/70">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>principal@dowencollege.edu.ng</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VICE PRINCIPAL -->
+        <div class="team-card bg-gradient-to-br from-accent2 to-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="relative h-64 bg-gradient-to-br from-blue-600 to-blue-800 overflow-hidden">
+            <img src="" 
+                 alt="Mr. Adedotun Akanbi" 
+                 class="team-image w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full text-xs font-semibold text-secondary">
+                Vice Principal
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading text-xl font-bold mb-2">Mr. Adedotun Akanbi</h3>
+            <p class="text-xs text-secondary/60 mb-3">
+              Academic Leadership & Curriculum Development
+            </p>
+            <p class="text-sm font-semibold text-primary mb-3">
+              Vice Principal / Deputy Head of School (Academic)
+            </p>
+            <div class="flex items-center space-x-2 text-xs text-secondary/70">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>academic@dowencollege.edu.ng</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIRECTOR OF FINANCE -->
+        <div class="team-card bg-gradient-to-br from-accent2 to-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="relative h-64 bg-gradient-to-br from-purple-600 to-purple-800 overflow-hidden">
+            <img src="" 
+                 alt="Mrs. O.K. Borisade" 
+                 class="team-image w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full text-xs font-semibold text-secondary">
+                Director
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading text-xl font-bold mb-2">Mrs. O.K. Borisade</h3>
+            <p class="text-xs text-secondary/60 mb-3">
+              B.Sc, M.Sc, MBA, M.Ed (C.I) Education
+            </p>
+            <p class="text-sm font-semibold text-primary mb-3">
+              Director of Finance & Administration
+            </p>
+            <div class="flex items-center space-x-2 text-xs text-secondary/70">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>finance@dowencollege.edu.ng</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIRECTOR OF PARENTING -->
+        <div class="team-card bg-gradient-to-br from-accent2 to-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+          <div class="relative h-64 bg-gradient-to-br from-green-600 to-green-800 overflow-hidden">
+            <img src="" 
+                 alt="Mr. J.A. Adeyemi" 
+                 class="team-image w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full text-xs font-semibold text-secondary">
+                Director
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading text-xl font-bold mb-2">Mr. J.A. Adeyemi</h3>
+            <p class="text-xs text-secondary/60 mb-3">
+              B.Sc Industrial Technology
+            </p>
+            <p class="text-sm font-semibold text-primary mb-3">
+              Director of Parenting & Student Affairs
+            </p>
+            <div class="flex items-center space-x-2 text-xs text-secondary/70">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>studentaffairs@dowencollege.edu.ng</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMINISTRATIVE ADVISOR -->
+        <div class="team-card bg-gradient-to-br from-accent2 to-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 md:col-span-2 lg:col-span-1">
+          <div class="relative h-64 bg-gradient-to-br from-orange-600 to-orange-800 overflow-hidden">
+            <img src="" 
+                 alt="Dr. Adewale Adeoye" 
+                 class="team-image w-full h-full object-cover opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm rounded-full text-xs font-semibold text-secondary">
+                Advisor
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading text-xl font-bold mb-2">Dr. Adewale Adeoye</h3>
+            <p class="text-xs text-secondary/60 mb-3">
+              B.A.Ed, M.Ed, Ph.D
+            </p>
+            <p class="text-sm font-semibold text-primary mb-3">
+              Administrative Advisor
+            </p>
+            <div class="flex items-center space-x-2 text-xs text-secondary/70">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>advisor@dowencollege.edu.ng</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="bg-accent2 py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-secondary">
+          Our Leadership <span class="gradient-text">Values</span>
+        </h2>
+        <p class="text-secondary/70 max-w-2xl mx-auto">
+          The principles that guide our team in delivering excellence
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="values-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Excellence</h3>
+          <p class="text-secondary/70 text-sm">
+            Committed to the highest standards in education and student development
+          </p>
+        </div>
+
+        <div class="values-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-secondary to-accent1 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Integrity</h3>
+          <p class="text-secondary/70 text-sm">
+            Leading with honesty, transparency, and ethical principles in all we do
+          </p>
+        </div>
+
+        <div class="values-card bg-white p-8 rounded-2xl shadow-lg text-center">
+          <div class="w-16 h-16 bg-gradient-to-br from-primary to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold mb-3">Care</h3>
+          <p class="text-secondary/70 text-sm">
+            Nurturing every student with compassion and dedicated support
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- FOOTER -->
+  <footer class="bg-secondary text-white py-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-3 mb-4 md:mb-0">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+          </div>
+          <div>
+            <h1 class="font-heading text-lg font-bold">Dowen College Lagos</h1>
+            <p class="text-white/60 text-xs">Shaping Future Leaders Since 1997</p>
+          </div>
+        </div>
+        
+        <div class="flex space-x-6 text-sm items-center">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/dowencollegelagos/"
+             target="_blank"
+             rel="noopener"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5a4.25 4.25 0 00-4.25-4.25h-8.5z"/>
+              <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@dowencollegelagos2014"
+             target="_blank"
+             rel="noopener"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a2.99 2.99 0 00-2.106-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.392.566a2.99 2.99 0 00-2.106 2.12A31.2 31.2 0 000 12a31.2 31.2 0 00.502 5.814 2.99 2.99 0 002.106 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.392-.566a2.99 2.99 0 002.106-2.12A31.2 31.2 0 0024 12a31.2 31.2 0 00-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+
+          <!-- Contact -->
+          <a href="index.html#contact-us"
+             class="hover:text-primary transition">
+            Contact Us
+          </a>
+
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/40 text-xs">
+        © 2026 Dowen College Lagos. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ANIMATIONS -->
+  <script>
+    // Hero animations
+    anime({
+      targets: '.hero-badge',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-title',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      duration: 1200,
+      delay: 200,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-subtitle',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      delay: 400,
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-stats > div',
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      delay: anime.stagger(150, { start: 600 }),
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    // Team cards animation
+    anime({
+      targets: '.team-card',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(150, { start: 300 }),
+      duration: 900,
+      easing: 'easeOutExpo'
+    });
+
+    // Values cards animation
+    anime({
+      targets: '.values-card',
+      scale: [0.9, 1],
+      opacity: [0, 1],
+      delay: anime.stagger(200, { start: 400 }),
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+  </script>
+
+</body>
+</html>

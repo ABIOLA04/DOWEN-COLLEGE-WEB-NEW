@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overscroll-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facilities</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/Logo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FEAE02",
+            secondary: "#060F49",
+            accent1: "#000055",
+            accent2: "#F8F9FB"
+          },
+          fontFamily: {
+            heading: ["Poppins", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FEAE02 0%, #FFC933 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .facility-card {
+      
+    }
+
+    .facility-image-container {
+      transition: all 0.3s ease;
+    }
+
+    .facility-image-container:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .facility-image-container:hover .facility-image {
+      transform: scale(1.05);
+    }
+
+    .facility-image {
+      transition: transform 0.3s ease;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.7;
+      animation: blob 7s infinite;
+    }
+
+    @keyframes blob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-secondary font-body">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/95">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary to-yellow-500 rounded-lg flex items-center justify-center">
+          <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+        </div>
+        <span class="font-heading text-xl font-bold bg-gradient-to-r from-secondary to-accent1 bg-clip-text text-transparent">
+          Dowen College
+        </span>
+      </div>
+
+      <a href="index.html" class="flex items-center space-x-2 text-sm font-medium hover:text-primary transition group">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-br from-secondary via-accent1 to-secondary py-24 md:py-32 overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="blob w-72 h-72 bg-primary top-10 -left-20" style="animation-delay: 0s;"></div>
+    <div class="blob w-96 h-96 bg-yellow-300 top-20 -right-32" style="animation-delay: 2s;"></div>
+    <div class="blob w-64 h-64 bg-primary bottom-10 left-1/3" style="animation-delay: 4s;"></div>
+
+    <!-- Pattern overlay -->
+    <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
+      <div class="hero-badge inline-block mb-6">
+        <span class="px-5 py-2 bg-primary/20 backdrop-blur-sm text-primary font-semibold rounded-full text-sm border border-primary/30 inline-flex items-center space-x-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+          </svg>
+          <span>World-Class Infrastructure</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title font-heading text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Our <span class="gradient-text">Facilities</span>
+      </h1>
+
+      <p class="hero-subtitle text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+        Comprehensive modern teaching and learning facilities of international standard to ensure academic and vocational excellence
+      </p>
+    </div>
+  </section>
+
+  <!-- FACILITIES SECTION -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Multipurpose Court -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl">
+          <img src="" 
+               alt="Multipurpose Court" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Sports & Recreation
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Multipurpose Court</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-4">
+            We have a well-equipped Sports unit and support interests such as swimming, soccer, handball, basketball, athletics, table-tennis, lawn-tennis and rugby.
+          </p>
+          <p class="text-secondary/80 leading-relaxed">
+            We have contracted coaches to assist our Physical Education teachers in each sport, and Dowen students partake in external competitions with like-minded institutions.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-6">
+            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">⚽ Soccer</span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">🏀 Basketball</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">🤾 Handball</span>
+            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">🏃 Athletics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swimming Pool -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="order-2 md:order-1">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v.878A2.988 2.988 0 0110 15a2.988 2.988 0 01-3-2.122V13a2 2 0 00-2-2h-.917c-.055-.325-.083-.66-.083-1 0-.69.13-1.352.332-1.973z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Swimming Pool</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            We provide a well-maintained swimming pool for recreation as well as acquiring life-saving skills in swimming. Our pool is regularly maintained and supervised by trained professionals.
+          </p>
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+            <p class="text-sm text-blue-800">
+              <strong>Swimming Programs:</strong> Regular swimming lessons, water safety training, and competitive swimming training available
+            </p>
+          </div>
+        </div>
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl order-1 md:order-2">
+          <img src="" 
+               alt="Swimming Pool" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Aquatics
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Library -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl">
+          <img src="" 
+               alt="Library" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Knowledge Center
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Library</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-4">
+            Dowen College Lagos has an ultra-modern Library stocked with over 3000 titles covering all subjects offered in the school.
+          </p>
+          <p class="text-secondary/80 leading-relaxed mb-4">
+            The library features internet facilities for academic purposes and a computerized catalogue system classified by subject area.
+          </p>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            All our students have the opportunity of developing a lifelong reading habit.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center p-4 bg-purple-50 rounded-xl">
+              <div class="text-2xl font-bold text-purple-600">3000+</div>
+              <div class="text-xs text-secondary/70 mt-1">Book Titles</div>
+            </div>
+            <div class="text-center p-4 bg-purple-50 rounded-xl">
+              <div class="text-2xl font-bold text-purple-600">Digital</div>
+              <div class="text-xs text-secondary/70 mt-1">Catalogue</div>
+            </div>
+            <div class="text-center p-4 bg-purple-50 rounded-xl">
+              <div class="text-2xl font-bold text-purple-600">24/7</div>
+              <div class="text-xs text-secondary/70 mt-1">Access</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sick Bay -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="order-2 md:order-1">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Sick Bay</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            We have a well-run clinic to meet all basic health needs. The school has a residential Nurse and part-time Doctor to ensure the wellbeing of all students.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
+              <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm text-secondary/80">Residential Nurse on duty</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
+              <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm text-secondary/80">Part-time Doctor available</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-red-50 rounded-lg">
+              <svg class="w-5 h-5 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm text-secondary/80">Basic health needs covered</span>
+            </div>
+          </div>
+        </div>
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl order-1 md:order-2">
+          <img src="" 
+               alt="Sick Bay" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Healthcare
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accommodation -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl">
+          <img src="" 
+               alt="Accommodation" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Boarding
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Accommodation</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            Our boarding facilities are a "home away from home". Students are well taken care of by our dedicated hostel parents who ensure a safe, comfortable, and nurturing environment.
+          </p>
+          <a href="Boarding.html" 
+             class="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold px-6 py-3 rounded-full hover:scale-105 hover:shadow-xl transition-all">
+            <span>Learn More About Boarding</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Laboratories -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="order-2 md:order-1">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Laboratories</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            At Dowen we recognize the place of science in national development. We place special emphasis on equipping our laboratories to international standards.
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3 bg-cyan-50 rounded-lg text-center">
+              <div class="text-sm font-medium text-cyan-700">Basic Science</div>
+            </div>
+            <div class="p-3 bg-cyan-50 rounded-lg text-center">
+              <div class="text-sm font-medium text-cyan-700">Physics</div>
+            </div>
+            <div class="p-3 bg-cyan-50 rounded-lg text-center">
+              <div class="text-sm font-medium text-cyan-700">Chemistry</div>
+            </div>
+            <div class="p-3 bg-cyan-50 rounded-lg text-center">
+              <div class="text-sm font-medium text-cyan-700">Biology</div>
+            </div>
+            <div class="p-3 bg-cyan-50 rounded-lg text-center">
+              <div class="text-sm font-medium text-cyan-700">ICT Lab</div>
+            </div>
+            <div class="p-3 bg-cyan-50 rounded-lg text-center">
+              <div class="text-sm font-medium text-cyan-700">Agric Science</div>
+            </div>
+          </div>
+        </div>
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl order-1 md:order-2">
+          <img src="" 
+               alt="Laboratories" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Science & Technology
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classrooms -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center mb-20">
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl">
+          <img src="" 
+               alt="Classrooms" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Learning Spaces
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">Classrooms</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            Our classrooms are fully air-conditioned with adequate teaching aids to facilitate learning and integrate all learning styles. Each classroom is designed to provide an optimal learning environment.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3 p-3 bg-indigo-50 rounded-lg">
+              <svg class="w-5 h-5 text-indigo-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm text-secondary/80">Fully air-conditioned</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-indigo-50 rounded-lg">
+              <svg class="w-5 h-5 text-indigo-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm text-secondary/80">Modern teaching aids</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 bg-indigo-50 rounded-lg">
+              <svg class="w-5 h-5 text-indigo-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-sm text-secondary/80">Interactive whiteboards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ICT Laboratory -->
+      <div class="facility-card grid md:grid-cols-2 gap-10 items-center">
+        <div class="order-2 md:order-1">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h2 class="font-heading text-3xl font-bold text-secondary">ICT Laboratory</h2>
+          </div>
+          <p class="text-secondary/80 leading-relaxed mb-6">
+            Our ICT laboratory is fully equipped with modern computer systems with unlimited internet access strictly for research purposes and acquiring valuable skills to compete globally.
+          </p>
+          <div class="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+            <p class="text-sm text-teal-800 mb-2">
+              <strong>Digital Skills Training:</strong>
+            </p>
+            <p class="text-xs text-secondary/80">
+              Students learn coding, digital literacy, research skills, and modern productivity tools to prepare them for the digital age.
+            </p>
+          </div>
+        </div>
+        <div class="facility-image-container relative h-96 rounded-2xl overflow-hidden shadow-xl order-1 md:order-2">
+          <img src="" 
+               alt="ICT Laboratory" 
+               class="facility-image w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6">
+            <div class="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-sm font-semibold text-secondary">
+              Technology Hub
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+   <!-- FOOTER -->
+  <footer class="bg-secondary text-white py-12 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex items-center space-x-3 mb-4 md:mb-0">
+          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+            <img src="images/Logo.png" alt="Dowen College Logo" class="w-8 h-8 object-contain inline-block">
+          </div>
+          <div>
+            <h1 class="font-heading text-lg font-bold">Dowen College Lagos</h1>
+            <p class="text-white/60 text-xs">Shaping Future Leaders Since 1997</p>
+          </div>
+        </div>
+        
+        <div class="flex space-x-6 text-sm items-center">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/dowencollegelagos/"
+             target="_blank"
+             rel="noopener"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5a4.25 4.25 0 00-4.25-4.25h-8.5z"/>
+              <path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z"/>
+              <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@dowencollegelagos2014"
+             target="_blank"
+             rel="noopener"
+             class="hover:text-primary transition flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a2.99 2.99 0 00-2.106-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.392.566a2.99 2.99 0 00-2.106 2.12A31.2 31.2 0 000 12a31.2 31.2 0 00.502 5.814 2.99 2.99 0 002.106 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.392-.566a2.99 2.99 0 002.106-2.12A31.2 31.2 0 0024 12a31.2 31.2 0 00-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/>
+            </svg>
+            <span>YouTube</span>
+          </a>
+
+          <!-- Contact -->
+          <a href="index.html#contact-us"
+             class="hover:text-primary transition">
+            Contact Us
+          </a>
+
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/40 text-xs">
+        © 2026 Dowen College Lagos. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ANIMATIONS -->
+  <script>
+    // Hero animations
+    anime({
+      targets: '.hero-badge',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      duration: 800,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-title',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      duration: 1200,
+      delay: 200,
+      easing: 'easeOutExpo'
+    });
+
+    anime({
+      targets: '.hero-subtitle',
+      translateY: [40, 0],
+      opacity: [0, 1],
+      delay: 400,
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    // Facility cards animation
+    anime({
+      targets: '.facility-card',
+      translateY: [60, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(200, { start: 300 }),
+      duration: 900,
+      easing: 'easeOutExpo'
+    });
+  </script>
+
+</body>
+</html>

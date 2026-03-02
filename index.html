@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overscroll-none">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dowen College Lagos</title>
+  <link rel="icon" type="image/png" href="images/Logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#FEAE02",
+            secondary: "#060F49",
+            accent1: "#000055",
+            accent2: "#F8F9FB"
+          },
+          fontFamily: {
+            heading: ["Poppins", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gradient-overlay {
+      background: linear-gradient(135deg, rgba(6, 15, 73, 0.85) 0%, rgba(0, 0, 85, 0.7) 100%);
+    }
+    
+    .hero-image-container {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .shine-effect {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { left: -100%; }
+      50%, 100% { left: 100%; }
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #FEAE02;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    html, body {
+      overscroll-behavior: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white font-body text-secondary overflow-x-hidden overscroll-none">
+
+<!-- NAVBAR -->
+<header class="w-full bg-white/95 backdrop-blur-md shadow-sm fixed top-0 left-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 flex items-center justify-center">
+        <img src="images/Logo.png" alt="Dowen College Logo" class="w-full h-full object-contain">
+      </div>
+      <h1 class="font-heading text-xl font-bold bg-gradient-to-r from-secondary to-accent1 bg-clip-text text-transparent">
+        Dowen College
+      </h1>
+    </div>
+
+    <nav class="hidden md:flex space-x-8 text-sm font-medium">
+      <a href="#" class="nav-link hover:text-primary">Home</a>
+      <a href="#about-us" class="nav-link hover:text-primary">About Us</a>
+      <a href="Our School.html" class="nav-link hover:text-primary">Our School</a>
+      <a href="Enrolment.html" class="nav-link hover:text-primary">Admissions</a>
+      <a href="The Team.html" class="nav-link hover:text-primary">Meet The Team</a>
+      <a href="#" class="nav-link hover:text-primary">News</a>
+      <a href="#" class="nav-link hover:text-primary">Scholarships</a>
+    </nav>
+
+    <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu"
+     class="fixed top-20 right-6 w-56 bg-white text-secondary rounded-xl shadow-xl border-2 border-primary ring-1 ring-primary/20 hidden md:hidden z-[999]">
+
+  <nav class="flex flex-col py-4 text-sm font-medium">
+    <a href="index.html" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">Home</a>
+    <a href="#about-us" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">About Us</a>
+    <a href="Our School.html" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">Our School</a>
+    <a href="Enrolment.html" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">Admissions</a>
+    <a href="Alumni.html" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">Alumni</a>
+    <a href="#" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">News</a>
+    <a href="#" class="px-6 py-3 hover:bg-accent2 hover:text-primary transition">Scholarships</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="relative w-full min-h-screen overflow-hidden pt-20">
+
+
+  <!-- Animated background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-secondary via-accent1 to-secondary z-0">
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-0 -left-4 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+      <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+      <div class="absolute -bottom-8 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+    </div>
+  </div>
+
+  <!-- Pattern overlay -->
+  <div class="absolute inset-0 z-10 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+  <!-- Main content container -->
+  <div class="relative z-20 max-w-7xl mx-auto px-6 py-12 md:py-20 lg:pl-28 xl:pl-32">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left: Text content -->
+      <div class="text-white space-y-6">
+        <div class="inline-block">
+          <span class="hero-badge px-4 py-2 bg-primary/20 backdrop-blur-sm text-primary font-semibold rounded-full text-sm border border-primary/30">
+            🎓 IGCSE Excellence 2024
+          </span>
+        </div>
+        
+        <h2 class="hero-title font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          Shaping <span class="text-primary">Future Leaders</span>
+        </h2>
+
+        <p class="hero-sub text-lg md:text-xl text-white/80 max-w-lg leading-relaxed">
+          Celebrating outstanding graduating students and exceptional academic results that open doors to world-class universities.
+        </p>
+
+        <div class="hero-buttons flex flex-wrap gap-4 pt-4">
+          <a href="Enrolment.html" class="inline-flex items-center bg-primary text-secondary font-semibold px-8 py-4 rounded-full hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <span>Enrolment Procedure</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+          
+          <a href="Policies.html" class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-full border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300">
+            <span>School Policies</span>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats grid grid-cols-3 gap-6 pt-8">
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-primary">98%</div>
+            <div class="text-sm text-white/70 mt-1">Pass Rate</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-primary">350+</div>
+            <div class="text-sm text-white/70 mt-1">Graduates</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl md:text-4xl font-bold text-primary">25+ Years</div>
+            <div class="text-sm text-white/70 mt-1">Academic Excellence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Image carousel -->
+      <div class="hero-image-wrapper relative">
+        <div class="hero-image-container floating">
+          <img id="hero-main"
+               src="images/Slideshow images/TBTB.jpg"
+               class="w-full h-[500px] md:h-[600px] object-cover transition-opacity duration-700"
+               alt="Graduating Students">
+          <div class="shine-effect"></div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/30 rounded-full blur-2xl"></div>
+        <div class="absolute -top-6 -right-6 w-40 h-40 bg-yellow-300/20 rounded-full blur-2xl"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+
+</section>
+
+
+<!-- INFO SECTION -->
+<section id="about-us" class="relative bg-white py-20 md:py-28 scroll-mt-32">
+  <!-- About Us Left Vertical Banner -->
+  <div class="about-banner hidden lg:flex absolute left-0 top-0 h-full w-64 bg-secondary text-white opacity-0">
+    <div class="sticky top-32 px-8 py-12 space-y-6 flex flex-col h-[calc(100vh-8rem)]">
+      
+      <div class="font-heading text-2xl font-bold">
+        Discover Dowen
+      </div>
+
+      <div class="text-sm uppercase tracking-wider opacity-80">
+        A Tradition of Excellence
+      </div>
+
+      <div class="w-12 h-1 bg-primary"></div>
+
+      <div class="text-sm font-medium">
+        Theme for 2025–2026 Session
+      </div>
+
+      <div class="font-heading font-bold text-primary text-2xl leading-tight">
+        “Excel,<br>
+        Beyond,<br>
+        Boundaries”
+      </div>
+
+      <div class="text-sm opacity-80">
+        2025–2026
+      </div>
+
+      <div class="pt-4 text-sm uppercase tracking-wider text-primary font-semibold">
+        Admission in Progress
+      </div>
+
+      <!-- Spacer -->
+      <div class="flex-grow"></div>
+
+      <!-- YouTube Preview -->
+      <div class="space-y-3">
+        <div class="text-xs uppercase tracking-wider opacity-70">
+          Watch Life at Dowen
+        </div>
+        <div class="relative w-full h-32 rounded-lg overflow-hidden bg-black/30 border border-white/20">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/t2kJSzQTy9c"
+            title="Dowen College Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Crest Watermark -->
+      <div class="pt-6 flex justify-center">
+        <div class="w-20 h-20 opacity-20">
+          <img src="images/Logo.png" alt="Dowen Crest" class="w-full h-full object-contain">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6 lg:pl-72">
+    
+    <div class="text-center mb-16">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+      <h3 class="font-heading text-3xl md:text-4xl font-bold mt-3 mb-4">Excellence in Every Aspect</h3>
+      <p class="text-secondary/70 max-w-2xl mx-auto">Providing a world-class education that prepares students for global success</p>
+    </div>
+    <div class="max-w-4xl mx-auto text-secondary space-y-8 leading-relaxed text-lg">
+
+      <p>
+        We drive this march with our Dowen mantra – <span class="font-semibold text-secondary">TO BE THE BEST</span>, and our commitment to this is unwavering as evidenced in our enviable products: well-rounded learners.
+      </p>
+
+      <p>
+        We are energized to achieve this also by the Dowen College <span class="font-semibold">ABCD</span> where:
+      </p>
+
+      <div class="space-y-6">
+
+        <div>
+          <h4 class="font-heading text-xl font-bold text-secondary mb-2">A – Academics</h4>
+          <p>
+            We inculcate the values of self-development through consistent training to upgrade knowledge and skills, confidently positioning learners to thrive in a dynamic environment.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-xl font-bold text-secondary mb-2">B – Beauty</h4>
+          <p>
+            Self-awareness and acceptance of personal capabilities foster the right attitude and personality to appreciate inner potential and the beauty of the world, inspiring learners to be positive agents of change.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-xl font-bold text-secondary mb-2">C – Culture</h4>
+          <p>
+            We fuse core values such as kindness, integrity, respect, and teamwork with learning in a dynamic global community.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-xl font-bold text-secondary mb-2">D – Discipline</h4>
+          <p>
+            Our learners are guided by mindful choices in what they eat, drink, listen to, wear, play, joke about, associate with, and watch—building strong character and responsibility.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="pt-4 font-medium">
+        All of these position our learners to make indelible marks in society.
+      </p>
+
+    </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="bg-gradient-to-br from-secondary to-accent1 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
+      <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mt-3">What Our Community Says</h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="testimonial-card bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
+            ZA
+          </div>
+          <div class="ml-4">
+            <div class="text-white font-semibold">Zainab Abba Ali</div>
+            <div class="text-white/60 text-sm">Proud Parent</div>
+          </div>
+        </div>
+        <p class="text-white/80 leading-relaxed">
+          "An Ideal school for children. The teachers are dedicated and Knowlegable. The students are well trained and respectful."
+        </p>
+      </div>
+
+      <div class="testimonial-card bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">
+            OE
+          </div>
+          <div class="ml-4">
+            <div class="text-white font-semibold">Omotola Eze</div>
+            <div class="text-white/60 text-sm">Parent</div>
+          </div>
+        </div>
+        <p class="text-white/80 leading-relaxed">
+          "The quality of education and care my daughter received exceeded all expectations. The teachers are dedicated and truly care about each student's success."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT US SECTION -->
+<section id="contact-us" class="bg-accent2 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+
+    <!-- Left: Contact Info -->
+    <div class="space-y-6">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">Contact Us</span>
+      <h3 class="font-heading text-3xl md:text-4xl font-bold">
+        Get in Touch
+      </h3>
+
+      <p class="text-secondary/80 max-w-md leading-relaxed">
+        We would love to hear from you. Reach out to us for enquiries, admissions information, or general feedback.
+      </p>
+
+      <div class="pt-4 space-y-2 text-secondary/90">
+        <p class="font-semibold">Dowen College Lagos</p>
+        <p>
+          No. 18, Adebayo Doherty Road,<br>
+          Lekki Phase 1, Lagos, Nigeria.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+      <form id="contact-form" class="space-y-6">
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">First Name</label>
+            <input
+              type="text"
+              name="first_name"
+              required
+              class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:outline-none"
+            >
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium mb-1">Last Name</label>
+            <input
+              type="text"
+              name="last_name"
+              required
+              class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:outline-none"
+            >
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:outline-none"
+          >
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Message</label>
+          <textarea
+            name="message"
+            rows="5"
+            required
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-primary focus:outline-none resize-none"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center bg-primary text-secondary font-semibold px-8 py-4 rounded-full hover:scale-105 hover:shadow-lg transition-all duration-300"
+        >
+          Send Message
+        </button>
+
+        <p id="form-status" class="text-sm font-medium hidden"></p>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-secondary text-white py-12">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <div class="flex items-center justify-center space-x-3 mb-4">
+      <div class="w-10 h-10 flex items-center justify-center">
+        <img src="images/Logo.png" alt="Dowen College Logo" class="w-full h-full object-contain">
+      </div>
+      <h1 class="font-heading text-xl font-bold">Dowen College Lagos</h1>
+    </div>
+    <p class="text-white/60 text-sm mb-6">Shaping Future Leaders Since 1997</p>
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto text-sm mt-6">
+
+      <div>
+        <h4 class="font-heading font-semibold text-primary mb-2">Our Vision</h4>
+        <p class="text-white/70 leading-relaxed">
+          That every child that passes through Dowen College Lagos develops
+          <span class="text-white font-semibold">“TO BE THE BEST”</span>!
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-semibold text-primary mb-2">Fun Facts</h4>
+        <ul class="text-white/70 space-y-1">
+          <li>Students to teacher ratio: <span class="font-medium text-white">7:1</span></li>
+          <li>Fully Integrated Curriculum:</li>
+          <li class="pl-4 text-white/60">
+            WAEC / IGCSE / SAT / TOEFL / IELTS
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- Partners Banner -->
+    <div class="mt-10 flex justify-center">
+      <div class="max-w-4xl w-full px-4">
+        <img
+          src="images/Partners/Partner Banner.png"
+          alt="Dowen College Partners"
+          class="w-full object-contain opacity-90"
+        >
+      </div>
+    </div>
+    <p class="text-white/40 text-xs mt-8">&copy; 2026 Dowen College. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ANIME.JS ANIMATIONS -->
+<script>
+ 
+  anime({
+    targets: '.hero-badge',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    duration: 800,
+    easing: 'easeOutExpo'
+  });
+
+  anime({
+    targets: '.hero-title',
+    translateY: [60, 0],
+    opacity: [0, 1],
+    duration: 1200,
+    delay: 200,
+    easing: 'easeOutExpo'
+  });
+
+  anime({
+    targets: '.hero-sub',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    delay: 500,
+    duration: 1000,
+    easing: 'easeOutExpo'
+  });
+
+  anime({
+    targets: '.hero-buttons',
+    translateY: [30, 0],
+    opacity: [0, 1],
+    delay: 700,
+    duration: 900,
+    easing: 'easeOutExpo'
+  });
+
+  anime({
+    targets: '.hero-stats > div',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(150, { start: 900 }),
+    duration: 800,
+    easing: 'easeOutExpo'
+  });
+
+  anime({
+    targets: '.hero-image-wrapper',
+    translateX: [100, 0],
+    opacity: [0, 1],
+    delay: 400,
+    duration: 1200,
+    easing: 'easeOutExpo'
+  });
+
+  // Info cards animation
+  anime({
+    targets: '.info-card',
+    translateY: [60, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(200, { start: 400 }),
+    duration: 900,
+    easing: 'easeOutExpo'
+  });
+
+  // Testimonial cards animation
+  anime({
+    targets: '.testimonial-card',
+    translateY: [40, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(200, { start: 300 }),
+    duration: 900,
+    easing: 'easeOutExpo'
+  });
+
+  anime({
+    targets: '.about-banner',
+    opacity: [0, 1],
+    duration: 1200,
+    easing: 'easeOutExpo',
+    delay: 300
+  });
+
+  // Hero image slideshow
+  const heroImages = [
+    "images/Slideshow images/1.jpg",
+    "images/Slideshow images/2.jpg",
+    "images/Slideshow images/3.jpg",
+    "images/Slideshow images/4.jpg",
+    "images/Slideshow images/5.jpg",
+    "images/Slideshow images/6.jpg",
+    "images/Slideshow images/7.jpg",
+    "images/Slideshow images/8.jpg",
+    "images/Slideshow images/9.jpg",
+    "images/Slideshow images/10.jpg",
+    "images/Slideshow images/11.jpg",
+    "images/Slideshow images/12.jpg",
+  ];
+
+  let currentHero = 0;
+  const heroMain = document.getElementById("hero-main");
+
+  setInterval(() => {
+    currentHero = (currentHero + 1) % heroImages.length;
+
+    anime({
+      targets: heroMain,
+      opacity: [1, 0],
+      duration: 500,
+      easing: "easeInOutQuad",
+      complete: () => {
+        heroMain.src = heroImages[currentHero];
+
+        anime({
+          targets: heroMain,
+          opacity: [0, 1],
+          duration: 700,
+          easing: "easeOutQuad"
+        });
+      }
+    });
+  }, 5000);
+  (function(){
+    emailjs.init("d33p-V7gs8ZocH9Lq");
+  })();
+
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.getElementById("form-status");
+
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_vfmzx5r",
+      "template_exwvdg7",
+      this
+    ).then(() => {
+      formStatus.textContent = "Message sent successfully!";
+      formStatus.className = "text-green-600 font-medium";
+      formStatus.classList.remove("hidden");
+      contactForm.reset();
+    }, () => {
+      formStatus.textContent = "Something went wrong. Please try again.";
+      formStatus.className = "text-red-600 font-medium";
+      formStatus.classList.remove("hidden");
+    });
+  });
+  // Mobile menu toggle (safe)
+  document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (!mobileMenuBtn || !mobileMenu) return;
+
+    mobileMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
